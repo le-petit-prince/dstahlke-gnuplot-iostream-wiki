@@ -32,6 +32,10 @@ Gnuplot gp("tee plot.gpi | gnuplot")
 
 This should work under any Unix-based operating system.
 
+Does gnuplot iostream work on Windows?
+
+We don't know. We haven't tested it on Windows but are willing to get it working with the help of some Windows user.
+
 
 My question is not in the FAQ.
 
