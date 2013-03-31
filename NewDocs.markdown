@@ -1,40 +1,40 @@
-## Intro
+# Intro
 
-## Basic usage
+# Basic usage
 
-# Quick example
+## Quick example
 
-# Construction
+## Construction
 
-# `iostream` interface
+## `iostream` interface
 
-# Sending data
+## Sending data
 
-# Demos
+## Demos
 
-## Legacy interface
+# Legacy interface
 
-## 1d vs. 2d data
+# 1d vs. 2d data
 
-## `unwrap` option
+# `unwrap` option
 
-## stdin vs. temporary files
+# stdin vs. temporary files
 
-## Mouse events
+# Mouse events
 
-## Custom datatypes
+# Custom datatypes
 
-## Custom array types
+# Custom array types
 
-## Compiler support
+# Compiler support
 
 NOTE: tell which ones support C++11.
 
-## Windows
+# Windows
 
-## FAQ
+# FAQ
 
-# Why does the gnuplot window closes directly after displaying?
+## Why does the gnuplot window closes directly after displaying?
 
 On Unix systems it should work with:
     Gnuplot gp("gnuplot -persist")
@@ -42,11 +42,11 @@ On Unix systems it should work with:
 On Windows, `pgnuplot` may work better, but temporary files can disappear before `pgnuplot`
 reads them.  If you know the best way in Windows, please let me know.
 
-# How do I save the gnuplot file?
+## How do I save the gnuplot file?
 
 You can save the plot file with:
    Gnuplot gp(fopen("script.gp", "w")
 
-# My question is not in the FAQ.
+## My question is not in the FAQ.
 
 Please email `dan@stahlke.org`.
