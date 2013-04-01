@@ -173,8 +173,9 @@ The `[[1,2],[3,4],[5,6]]` data would then be sent as
 	1 3 5
 	2 4 6
 
-There is also a `send2d_colmajor()` for multiple column gridded data.
-There are are examples of both 1d and 2d colmajor commands in `example-tuples.cc` and
+There is a `send2d_colmajor()` for multiple column gridded data.
+The binary senders also have `*_colmajor()` variants.
+There are examples of both 1d and 2d colmajor commands in `example-tuples.cc` and
 `example-uv.cc`.
 
 # stdin vs. temporary files
@@ -206,15 +207,40 @@ Each has advantages and disadvantages.
 
 # Mouse events
 
+On Linux you can intercept mouse clicks.  The coordinates as well as the button number are
+reported.  See `example-interactive.cc` for an example.
+
 # Custom datatypes
+
+If you define your own custom data type (e.g. a `struct`) then you must tell gnuplot-iostream
+how to print it.  This is done by providing a specialization of the `TextSender` class (for
+methods like `send1d()` that send text) or the `BinfmtSender` and `BinarySender` classes (for
+methods like `sendBinary1d()` that send binary data).  For an example, take a look at
+`example-tuples.cc`.
+
+If there is no specialization of `TextSender` then the `<<` operator is used.  So you can also
+just provide a specialization of `operator<<(std::ostream &, ...)`.
 
 # Custom array types
 
+STL containers, Armadillo, and Blitz++ are supported.  Support for other containers is added by
+providing a specialization of the `ArrayTraits` class.  For an example, look at the Armadillo
+and Blitz++ portions of `gnuplot-iostream.h`.
+
 # Compiler support
+
+FIXME - make chart of compiler support
 
 NOTE: tell which ones support C++11.
 
 # Windows
+
+On Linux, the "-persist" option can be passed to gnuplot in order to prevent the gnuplot window
+from closing when your program exits.  On Windows this doesn't seem to work.  The `pgnuplot`
+command keeps the window open, but temporary files can disappear before they are read.  If you
+can find a good solution for Windows, let me know.
+
+One thing that will work is to have your program wait for a keystroke before exiting.
 
 # FAQ
 
