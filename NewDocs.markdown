@@ -157,6 +157,17 @@ whereas `send2d()` would send
 	5
 	6
 
+# Container datatypes
+
+The following array-like containers are supported:
+* STL containers (e.g. `std::vector`), as well as anything with a similar iterator interface.
+
+nested containers
+
+tuples are columns
+
+FIXME - under construction
+
 # `colmajor` option
 
 You can store an array of columns in a `std::vector<std::vector<double> >`.
@@ -177,6 +188,11 @@ There is a `send2d_colmajor()` for multiple column gridded data.
 The binary senders also have `*_colmajor()` variants.
 There are examples of both 1d and 2d colmajor commands in `example-tuples.cc` and
 `example-uv.cc`.
+
+There is no need to use colmajor for things like
+`std::pair<std::vector<double>, std::vector<double>>`.
+Anything tuple-like (`std::pair`, `std::tuple`, `boost::tuple`, `blitz::TinyVector`) is always
+associated with columns.  The colmajor option applies to the outermost non-tuple container.
 
 # stdin vs. temporary files
 
