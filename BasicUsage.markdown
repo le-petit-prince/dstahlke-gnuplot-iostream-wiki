@@ -9,6 +9,8 @@ then the enviroment variable `GNUPLOT_IOSTREAM_CMD` is used if set, otherwise a 
 
 If you pass a `FILE *` then everything is sent there instead of to gnuplot:
 	Gnuplot gp(fopen("script.gp", "w"));
+You can also write to a file this way:
+	Gnuplot gp(">script.gp");
 Outputting to console is useful for debugging:
 	Gnuplot gp(stdout);
 

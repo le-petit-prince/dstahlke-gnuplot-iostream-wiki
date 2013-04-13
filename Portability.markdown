@@ -15,4 +15,8 @@ On Linux, the "-persist" option can be passed to gnuplot in order to prevent the
 
 Sending data to `gnuplot` or `pgnuplot` via stdin is very slow and the data seems to get garbled.  You can get around this by using [temporary files](StdinVsTemporary).  But when the `Gnuplot` object goes out of scope, the temporary files are removed, and this can happen before `gnuplot` gets a chance to read them.  Again the solution is to wait for a keystroke before letting the `Gnuplot` object go out of scope.
 
+If you do not require interactive use, it may be better to just write a script using
+	Gnuplot gp(">script.gp");
+and then pass that to gnuplot manually.
+
 If you have any suggestions for Windows please let me know!
