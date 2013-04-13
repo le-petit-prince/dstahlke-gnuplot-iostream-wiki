@@ -8,7 +8,7 @@ or can be passed via a temporary file,
 or even a non-temporary file,
 	gp << "plot" << gp.file1d(data, "file.dat") << "with lines\n";
 
-Binary data can also be passed via stdin or files.
+[Binary data](BinaryData) can also be passed via stdin or files.
 
 Each has advantages and disadvantages.
 

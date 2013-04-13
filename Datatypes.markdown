@@ -81,10 +81,6 @@ There is a `send2d_colmajor()` for multiple column gridded data.  The binary sen
 
 There is no need to use colmajor for things like `std::pair<std::vector<double>, std::vector<double>>`.  Anything tuple-like (`std::pair`, `std::tuple`, `boost::tuple`, `blitz::TinyVector`) is always associated with columns.  The colmajor option applies to the outermost non-tuple container.
 
-# Binary data: array vs. record
-
-FIXME - to be written
-
 # Custom datatypes
 
 If you define your own custom data type (e.g. a `struct`) then you must tell gnuplot-iostream how to print it.  This is done by providing a specialization of the `TextSender` class (for methods like `send1d()` that send text) or the `BinfmtSender` and `BinarySender` classes (for methods like `sendBinary1d()` that send binary data).  For an example, take a look at `example-data-1d.cc`.
