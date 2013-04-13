@@ -5,7 +5,7 @@ You can provide data to the `send1d()` or `send2d()` (or other similar) command 
 The rules for interpreting your data are as follows.  All tuple datatypes (such as `std::pair`
 or `boost::tuple`) correspond to columns.  For example, the datatype
 
-    std::pair< std::vector<double>, std::vector< std::pair<int, float> > >
+	std::pair<std::vector<double>,std::vector<std::pair<int,float>>>
 
 is interpreted as a one dimensional array with three columns, of types `double`, `int`, and `float`.  Containers (such as `std::vector` or `blitz::Array`) can be nested several layers deep to create a multidimensional array.
 
