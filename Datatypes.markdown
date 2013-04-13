@@ -1,9 +1,8 @@
 # Overview
 
-You can provide data to the `send1d()` or `send2d()` (or other similar) command using just about any type of container you want.  You can even nest several different types of containers.
+You can provide data to the `send1d()` or `send2d()` (or other similar) commands using just about any type of container you want.  You can even nest several different types of containers.
 
-The rules for interpreting your data are as follows.  All tuple datatypes (such as `std::pair`
-or `boost::tuple`) correspond to columns.  For example, the datatype
+The rules for interpreting your data are as follows.  All tuple datatypes (such as `std::pair` or `boost::tuple`) correspond to columns.  For example, the datatype
 
 	std::pair<std::vector<double>,std::vector<std::pair<int,float>>>
 
