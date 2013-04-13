@@ -12,7 +12,7 @@ is interpreted as a one dimensional array with three columns, of types `double`,
 
 although you might be better off using Armadillo or Blitz++ for multidimensional arrays.
 
-If you use `send1d()` then the first axis of this array corresponds to records and any further axes correspond to columns.  If you use `send2d()` then the first two axes correspond to blocks of records (for plotting two dimensional data like images or surfaces) and any remaining axes correspond to columns.  If you use `send1d_colmajor()` or `send2d_colmajor()` then the first axis corresponds to columns, and the remaining axes are interpreted using the rules just described.  If your data structure is not deep enough for the requested operation, a compile time error is raised.
+If you use `send1d()` then the first axis of your array corresponds to records and any further axes correspond to columns.  If you use `send2d()` then the first two axes correspond to blocks of records (for plotting two dimensional data like images or surfaces) and any remaining axes correspond to columns.  If you use `send1d_colmajor()` or `send2d_colmajor()` then the first axis corresponds to columns, and the remaining axes are interpreted using the rules just described.  If your data structure is not deep enough for the requested operation, a compile time error is raised.
 
 See `example-data-1d.cc` and `example-data-2d.cc` for plenty of basic and exotic examples.
 
@@ -21,9 +21,9 @@ See `example-data-1d.cc` and `example-data-2d.cc` for plenty of basic and exotic
 The following array-like containers are supported:
 
 * STL containers (e.g. `std::vector`), as well as anything with a similar iterator interface.
-* C style arrays (e.g. `double[10]`), but try to avoid them!  You should use `boost::array` or `std::array` instead.
-* Blitz++
-* Armadillo
+* C style arrays like `double[10]`, but try to avoid them!  You should use `boost::array` or `std::array` instead.
+* [Blitz++](http://blitz.sourceforge.net/)
+* [Armadillo](http://arma.sourceforge.net/)
 * It is relatively easy to add support for other types, so if you need something just let me know.
 
 Containers can be nested (e.g. `std::vector<std::vector<double>>`).  Note, however that certain types of containers such as `blitz::Array` should never be put inside an STL container!  The reason is that the assignment operator for `blitz::Array` doesn't work the way STL expects and this leads to memory corruption and crashes.
