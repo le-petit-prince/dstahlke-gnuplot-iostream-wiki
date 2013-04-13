@@ -6,24 +6,6 @@ First one or two (for send1d or send2d) axes label correspond to line (for send1
 
 See `example-data-1d.cc` and `example-data-2d.cc`.
 
-# 1d vs. 2d data
-
-All of the data sending commands come in 1d and 2d variants (e.g. `send1d()` and `send2d()`).  1d data is for points and curves (basically anything you would use the `plot` command for).  2d data is for images and surfaces (basically anything sent to `splot`).
-
-If you send a 3x2 dimensional `std::vector<std::vector<double> >` to `send1d()` it will send something that looks like
-	1 2
-	3 4
-	5 6
-whereas `send2d()` would send
-	1
-	2
-
-	3
-	4
-
-	5
-	6
-
 # Container datatypes
 
 The following array-like containers are supported:
@@ -45,6 +27,34 @@ The following tuple datatypes are supported:
 
 Tuples and containers can be nested arbitrarily.  For example, you can have a `std::pair` of `std::vector` of `std::pair`.  Tuples correspond to columns.
 
+Support for 3rd party libraries like Blitz++ and Armadillo is enabled by including `gnuplot-iostream.h` *after* the 3rd party library headers.  You are also allowed to include `gnuplot-iostream.h`, then the 3rd party headers, then `gnuplot-iostream.h` again:
+
+	#include "gnuplot-iostream.h"
+
+	// lots of stuff here...
+
+	#include <blitz/array.h>
+	// now load in support for Blitz++
+	#include "gnuplot-iostream.h"
+
+# 1d vs. 2d data
+
+All of the data sending commands come in 1d and 2d variants (e.g. `send1d()` and `send2d()`).  1d data is for points and curves (basically anything you would use the `plot` command for).  2d data is for images and surfaces (basically anything sent to `splot`).
+
+If you send a 3x2 dimensional `std::vector<std::vector<double> >` to `send1d()` it will send something that looks like
+	1 2
+	3 4
+	5 6
+whereas `send2d()` would send
+	1
+	2
+
+	3
+	4
+
+	5
+	6
+
 # `colmajor` option
 
 You can store an array of columns in a `std::vector<std::vector<double> >`.  Logically, considering the C convention for ordering indices, the last index should correspond to the column.  So if the array contained the data `[[1,2],[3,4],[5,6]]` then `send1d()` would send
@@ -58,6 +68,10 @@ However, considering that the number of columns is typically much smaller than t
 There is a `send2d_colmajor()` for multiple column gridded data.  The binary senders also have `*_colmajor()` variants.  There are examples of both 1d and 2d colmajor commands in `example-data-1d.cc` and `example-data-2d.cc`.
 
 There is no need to use colmajor for things like `std::pair<std::vector<double>, std::vector<double>>`.  Anything tuple-like (`std::pair`, `std::tuple`, `boost::tuple`, `blitz::TinyVector`) is always associated with columns.  The colmajor option applies to the outermost non-tuple container.
+
+# Binary data: array vs. record
+
+FIXME - to be written
 
 # Custom datatypes
 
