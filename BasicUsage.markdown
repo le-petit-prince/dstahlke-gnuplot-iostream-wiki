@@ -2,7 +2,10 @@
 
 You can pass the path to your gnuplot executable, along with any commandline parameters:
 	Gnuplot gp("gnuplot -persist");
-If you don't pass any parameters, then the enviroment variable `GNUPLOT_IOSTREAM_CMD` is used if set, otherwise a guess is made as to the best command to use for your operating system (usually `gnuplot -persist`).
+
+If constructed with no parameters,
+	Gnuplot gp;
+then the enviroment variable `GNUPLOT_IOSTREAM_CMD` is used if set, otherwise a guess is made as to the best command to use for your operating system (usually `gnuplot -persist`).
 
 On Windows, you may need to be careful to properly quote the path:
 	Gnuplot gp("\"C:\\my path\\gnuplot.exe\"");
