@@ -6,7 +6,7 @@ Supported data sources include STL containers (eg.  vector), Blitz++, and armadi
 
 If you have any questions, bugs, or suggestions, email me at `dan@stahlke.org`.
 
-[Basic Usage](Basic Usage)
+[Basic Usage](BasicUsage)
 
 # Legacy interface
 
