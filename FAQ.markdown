@@ -20,7 +20,8 @@ Note that if `Gnuplot` in constructed with no arguments then you can set the `GN
 	GNUPLOT_IOSTREAM_CMD=">script.gp" ./my_program
 
 Do not use temporary files if you want to save a script, since they will vanish.  If you use
-the [xxx](StdinVsTemporary)
+the `file1d()` or `binaryFile1d()` commands which normally make temporary files, you can pass
+them a filename to make a permanent file.  [See here](StdinVsTemporary) for more details.
 
 # My question is not in the FAQ.
 
