@@ -67,6 +67,8 @@ whereas `send2d()` would send
 	5
 	6
 
+In principle I could also easily add a `send3d()` which would put two blank lines between groups of 2d data.  This could be used in conjunction with the `index` keyword for the `plot` command.  However, I have not implemented this since I don't know if there is a use case.  Maybe it could be used for drawing several surface patches.  If you need it, let me know.
+
 # `colmajor` option
 
 You can store an array of columns in a `std::vector<std::vector<double> >`.  Logically, considering the C convention for ordering indices, the last index should correspond to the column.  So if the array contained the data `[[1,2],[3,4],[5,6]]` then `send1d()` would send
