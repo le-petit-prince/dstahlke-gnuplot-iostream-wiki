@@ -18,4 +18,4 @@ Each has advantages and disadvantages.
 * If your program runs and exits quickly, the temporary files might be cleaned up before gnuplot can read them.  The `pgnuplot` program on Windows seems especially prone to this problem.
 * If you are generating a script, using `Gnuplot gp(fopen("script.gp", "w"))` then it may make more sense to put the data in separate files rather than inlining it into your script.
 
-FIXME - how to manually wipe temp files
+Temporary files will automatically be erased when your program exits, or when the `Gnuplot` object goes out of scope.  If you wish to manually wipe them at any time, just call `gp.clearTmpfiles()`.

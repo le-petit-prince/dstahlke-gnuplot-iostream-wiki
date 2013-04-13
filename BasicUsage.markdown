@@ -89,5 +89,5 @@ There are several examples in the source:
 
 * `example-misc.cc` - Shows basic usage, temporary files, binary files, and various other things.
 * `example-interactive.cc` - Demonstrates handling mouse click events.  Currently only works in Linux.
-* `example-tuples.cc` - Demonstration of various ways data can be passed, for 1d data (curves).  This should plot a series of intertwined curves in the shape of a torus, with each curve being passed using a different type of container.  This is meant to demonstrate all the different types of containers you can use to pass your data.
-* `example-uv.cc` - Similar to the above but for 2d data.  Should plot a segmented torus, with each segment corresponding to a different type of container.  This is meant to demonstrate all the different types of containers you can use to pass your data.
+* `example-data-1d.cc` - Demonstration of various ways data can be passed, for 1d data (curves).  This should plot a series of intertwined curves in the shape of a torus, with each curve being passed using a different type of container.  This is meant to demonstrate all the different types of containers you can use to pass your data.
+* `example-data-2d.cc` - Similar to the above but for 2d data.  Should plot a segmented torus, with each segment corresponding to a different type of container.
