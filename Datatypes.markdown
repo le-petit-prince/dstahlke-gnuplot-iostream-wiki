@@ -6,7 +6,7 @@ The rules for interpreting your data are as follows.  All tuple datatypes (such 
 
 	std::pair<std::vector<double>,std::vector<std::pair<int,float>>>
 
-is interpreted as a one dimensional array with three columns, of types `double`, `int`, and `float`.  Containers (such as `std::vector` or `blitz::Array`) can be nested several layers deep to create a multidimensional array.
+is interpreted as a one dimensional array with three columns, of types `double`, `int`, and `float`.  Containers can be nested several layers deep to create a multidimensional array, like `std::vector<std::vector<double>>`, although you might be better off using Armadillo or Blitz++ for multidimensional arrays.
 
 If you use `send1d()` then the first axis of this array corresponds to records and any further axes correspond to columns.  If you use `send2d()` then the first two axes correspond to blocks of records (for plotting two dimensional data like images or surfaces) and any remaining axes correspond to columns.  If you use `send1d_colmajor()` or `send2d_colmajor()` then the first axis corresponds to columns, and the remaining axes are interpreted using the rules just described.  If your data structure is not deep enough for the requested operation, a compile time error is raised.
 
