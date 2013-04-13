@@ -2,14 +2,19 @@
 
 You can pass the path to your gnuplot executable, along with any commandline parameters:
 	Gnuplot gp("gnuplot -persist");
-The `-persist` option prevents the gnuplot window from closing when your program exits, at least on Linux.  On Windows it's a bit trickier and I don't really have a good solution yet (although you can just make your program wait for a keystroke before exiting).  On Windows, you may need to be careful to properly quote the path:
+If you don't pass any parameters, then the enviroment variable `GNUPLOT_IOSTREAM_CMD` is used if set, otherwise a guess is made as to the best command to use for your operating system (usually `gnuplot -persist`).
+
+On Windows, you may need to be careful to properly quote the path:
 	Gnuplot gp("\"C:\\my path\\gnuplot.exe\"");
-The default constructor, with no arguments, is the same as `Gnuplot gp("gnuplot")`.
 
 If you pass a `FILE *` then everything is sent there instead of to gnuplot:
 	Gnuplot gp(fopen("script.gp", "w"));
 Outputting to console is useful for debugging:
 	Gnuplot gp(stdout);
+
+Also useful for debugging is to set `GNUPLOT_IOSTREAM_CMD="cat"` to send the commands to console or `GNUPLOT_IOSTREAM_CMD=">script.gp"` to write to a file.
+
+NOTE: Windows support is a bit dodgy.  If you can make it better let me know.  There are some hits on the [Portability](Portability) page.
 
 # `iostream` interface
 
