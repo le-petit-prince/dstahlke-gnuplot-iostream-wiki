@@ -1,18 +1,27 @@
 # Overview
 
-FIXME - to be written
+You can provide data to the `send1d()` or `send2d()` (or other similar) command using just about any type of container you want.  You can even nest several different types of containers.
 
-First one or two (for send1d or send2d) axes label correspond to line (for send1d) or block,line (for send2d).  Remaining axes correspond to columns.  If `colmajor` is used, then first axis is used for columns.
+The rules for interpreting your data are as follows.  All tuple datatypes (such as `std::pair`
+or `boost::tuple`) correspond to columns.  For example, the datatype
 
-See `example-data-1d.cc` and `example-data-2d.cc`.
+    std::pair< std::vector<double>, std::vector< std::pair<int, float> > >
 
-# Container datatypes
+is interpreted as a one dimensional array with three columns, of types `double`, `int`, and `float`.  Containers (such as `std::vector` or `blitz::Array`) can be nested several layers deep to create a multidimensional array.
+
+If you use `send1d()` then the first axis of this array corresponds to records and any further axes correspond to columns.  If you use `send2d()` then the first two axes correspond to blocks of records (for plotting two dimensional data like images or surfaces) and any remaining axes correspond to columns.  If you use `send1d_colmajor()` or `send2d_colmajor()` then the first axis corresponds to columns, and the remaining axes are interpreted using the rules just described.  If your data structure is not deep enough for the requested operation, a compile time error is raised.
+
+See `example-data-1d.cc` and `example-data-2d.cc` for plenty of basic and exotic examples.
+
+# Container and tuple datatypes
 
 The following array-like containers are supported:
 
 * STL containers (e.g. `std::vector`), as well as anything with a similar iterator interface.
+* C style arrays (e.g. `double[10]`), but try to avoid them!  You should use `boost::array` or `std::array` instead.
 * Blitz++
 * Armadillo
+* It is relatively easy to add support for other types, so if you need something just let me know.
 
 Containers can be nested (e.g. `std::vector<std::vector<double>>`).  Note, however that certain types of containers such as `blitz::Array` should never be put inside an STL container!  The reason is that the assignment operator for `blitz::Array` doesn't work the way STL expects and this leads to memory corruption and crashes.
 
@@ -39,7 +48,7 @@ Support for 3rd party libraries like Blitz++ and Armadillo is enabled by includi
 
 # 1d vs. 2d data
 
-All of the data sending commands come in 1d and 2d variants (e.g. `send1d()` and `send2d()`).  1d data is for points and curves (basically anything you would use the `plot` command for).  2d data is for images and surfaces (basically anything sent to `splot`).
+All of the data sending commands come in 1d and 2d variants (e.g. `send1d()` and `send2d()`).  1d data is for points and curves.  2d data is for images and surfaces.
 
 If you send a 3x2 dimensional `std::vector<std::vector<double> >` to `send1d()` it will send something that looks like
 	1 2
