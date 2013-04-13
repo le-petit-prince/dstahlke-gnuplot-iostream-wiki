@@ -44,10 +44,8 @@ Don't forget the newline at the end of each command!
 ## Sending data
 
 There are several method for sending data, the basic two being `send1d(data)` and
-`send2d(data)`.
-The 1d functions are for things like points and curves.  The 2d functions are for surfaces and
-images.
-This is explained in more detail in later sections.
+`send2d(data)`.  The 1d functions are for things like points and curves.  The 2d functions are
+for surfaces and images.  This is explained in more detail in later sections.
 
 The most basic usage is to send the data through gnuplot's stdin, like so:
 	gp << "plot '-' with points\n";
