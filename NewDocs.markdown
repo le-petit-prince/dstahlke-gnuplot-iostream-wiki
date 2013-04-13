@@ -13,5 +13,6 @@ Table of contents:
 *  [Stdin vs. temporary files](StdinVsTemporary)
 *  [Legacy interface](LegacyInterface)
 *  [Capturing mouse events](Mouse)
+*  [Reference](Reference)
 *  [Portability](Portability)
 *  [FAQ](FAQ)
