@@ -1,5 +1,7 @@
 # Compiler support
 
+In order to support all kinds of container and tuple types, I make heavy use of template metaprogramming techniques.  This may break some compilers, although it works fine in modern versions of g++ and VC++.
+
 FIXME - make chart of compiler support
 
 NOTE: tell which ones support C++11.
