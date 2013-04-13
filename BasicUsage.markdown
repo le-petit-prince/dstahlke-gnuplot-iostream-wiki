@@ -2,7 +2,7 @@
 
 You can pass the path to your gnuplot executable, along with any commandline parameters:
 	Gnuplot gp("gnuplot -persist");
-The `-persist` option prevents the gnuplot window from closing when your program exits, at least on Linux.  On Windows it's a bit trickier and I don't really have a good solution yet (although you can just make your program wait for a keystroke before exiting).  On Windows, you need to be careful to properly quote the path:
+The `-persist` option prevents the gnuplot window from closing when your program exits, at least on Linux.  On Windows it's a bit trickier and I don't really have a good solution yet (although you can just make your program wait for a keystroke before exiting).  On Windows, you may need to be careful to properly quote the path:
 	Gnuplot gp("\"C:\\my path\\gnuplot.exe\"");
 The default constructor, with no arguments, is the same as `Gnuplot gp("gnuplot")`.
 
@@ -31,7 +31,7 @@ To send using temporary files:
 To send using non-temporary files:
 	gp << "plot" << gp.file1d(data, "filename.dat") << "with points\n";
 
-You can data in binary format rather than text, and this is probably a bit more efficient:
+You can send data in binary format rather than text, and this is probably a bit more efficient:
 	gp << "plot" << gp.binFile1d(data, "record") << "with points\n";
 
 # Quick example
@@ -89,5 +89,5 @@ There are several examples in the source:
 
 * `example-misc.cc` - Shows basic usage, temporary files, binary files, and various other things.
 * `example-interactive.cc` - Demonstrates handling mouse click events.  Currently only works in Linux.
-* `example-tuples.cc` - Demonstration of various ways data can be passed, for 1d data (curves).  This should plot a series of intertwined curves in the shape of a torus, with each curve being passed using a different type of container.
-* `example-uv.cc` - Similar to the above but for 2d data.  Should plot a segmented torus, with each segment corresponding to a different type of container.
+* `example-tuples.cc` - Demonstration of various ways data can be passed, for 1d data (curves).  This should plot a series of intertwined curves in the shape of a torus, with each curve being passed using a different type of container.  This is meant to demonstrate all the different types of containers you can use to pass your data.
+* `example-uv.cc` - Similar to the above but for 2d data.  Should plot a segmented torus, with each segment corresponding to a different type of container.  This is meant to demonstrate all the different types of containers you can use to pass your data.
