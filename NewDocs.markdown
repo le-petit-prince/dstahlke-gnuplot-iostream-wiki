@@ -6,16 +6,11 @@ Supported data sources include STL containers (eg.  vector), Blitz++, and armadi
 
 If you have any questions, bugs, or suggestions, email me at `dan@stahlke.org`.
 
-[Basic Usage](BasicUsage)
-
-[Datatypes](Datatypes)
-
-[Stdin vs. temporary files](StdinVsTemporary)
-
-[Legacy interface](LegacyInterface)
-
-[Capturing mouse events](Mouse)
-
-[Portability](Portability)
-
-[FAQ](FAQ)
+Table of contents:
+* [Basic Usage](BasicUsage)
+* [Datatypes](Datatypes)
+* [Stdin vs. temporary files](StdinVsTemporary)
+* [Legacy interface](LegacyInterface)
+* [Capturing mouse events](Mouse)
+* [Portability](Portability)
+* [FAQ](FAQ)
