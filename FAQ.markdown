@@ -6,7 +6,7 @@ Although, currently that is the default anyway, so it should work right out of t
 
 On Windows there are issues.  See the [portability](Portability) page for hints.
 
-# How do I save the gnuplot file?
+# How do I save the gnuplot script?
 
 You can save the plot file with:
 	Gnuplot gp(fopen("script.gp", "w"));
@@ -18,6 +18,9 @@ On Unix systems (or, possibly, with Cygwin) you can simultaneously plot and save
 
 Note that if `Gnuplot` in constructed with no arguments then you can set the `GNUPLOT_IOSTREAM_CMD` environment variable.  For example, on Linux do
 	GNUPLOT_IOSTREAM_CMD=">script.gp" ./my_program
+
+Do not use temporary files if you want to save a script, since they will vanish.  If you use
+the [xxx](StdinVsTemporary)
 
 # My question is not in the FAQ.
 
