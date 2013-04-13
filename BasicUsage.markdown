@@ -1,4 +1,4 @@
-## Construction
+# Construction
 
 You can pass the path to your gnuplot executable, along with any commandline parameters:
 	Gnuplot gp("gnuplot -persist");
@@ -14,13 +14,13 @@ If you pass a `FILE *` then everything is sent there instead of to gnuplot:
 Outputting to console is useful for debugging:
 	Gnuplot gp(stdout);
 
-## `iostream` interface
+# `iostream` interface
 
 Commands are sent to gnuplot using the `<<` operator.
 	gp << "set xrange [0:1]\n";
 Don't forget the newline at the end of each command!
 
-## Sending data
+# Sending data
 
 There are several method for sending data, the basic two being `send1d(data)` and
 `send2d(data)`.  The 1d functions are for things like points and curves.  The 2d functions are
@@ -39,7 +39,7 @@ To send using non-temporary files:
 You can data in binary format rather than text, and this is probably a bit more efficient:
 	gp << "plot" << gp.binFile1d(data, "record") << "with points\n";
 
-## Quick example
+# Quick example
 
 	// Compile it with:
 	//   g++ -o example-vector example-vector.cc -lboost_iostreams -lboost_system -lboost_filesystem
@@ -88,7 +88,7 @@ You can data in binary format rather than text, and this is probably a bit more 
 		gp.send1d(boost::make_tuple(pts_B_x, pts_B_y, pts_B_dx, pts_B_dy));
 	}
 
-## Demos
+# Demos
 
 There are several examples in the source:
 
