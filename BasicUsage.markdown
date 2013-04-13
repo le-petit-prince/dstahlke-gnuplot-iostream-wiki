@@ -14,7 +14,7 @@ Outputting to console is useful for debugging:
 
 Also useful for debugging is to set `GNUPLOT_IOSTREAM_CMD="cat"` to send the commands to console or `GNUPLOT_IOSTREAM_CMD=">script.gp"` to write to a file.
 
-NOTE: Windows support is a bit dodgy.  If you can make it better let me know.  There are some hits on the [Portability](Portability) page.
+NOTE: Windows support is a bit dodgy.  If you can make it better let me know.  There are some hints on the [Portability](Portability) page.
 
 # `iostream` interface
 
