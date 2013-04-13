@@ -2,10 +2,7 @@
 
 You can pass the path to your gnuplot executable, along with any commandline parameters:
 	Gnuplot gp("gnuplot -persist");
-The `-persist` option prevents the gnuplot window from closing when your program exits, at
-least on Linux.  On Windows it's a bit trickier and I don't really have a good solution yet
-(although you can just make your program wait for a keystroke before exiting).
-On Windows, you need to be careful to properly quote the path:
+The `-persist` option prevents the gnuplot window from closing when your program exits, at least on Linux.  On Windows it's a bit trickier and I don't really have a good solution yet (although you can just make your program wait for a keystroke before exiting).  On Windows, you need to be careful to properly quote the path:
 	Gnuplot gp("\"C:\\my path\\gnuplot.exe\"");
 The default constructor, with no arguments, is the same as `Gnuplot gp("gnuplot")`.
 
@@ -22,9 +19,7 @@ Don't forget the newline at the end of each command!
 
 # Sending data
 
-There are several method for sending data, the basic two being `send1d(data)` and
-`send2d(data)`.  The 1d functions are for things like points and curves.  The 2d functions are
-for surfaces and images.  This is explained in more detail in later sections.
+There are several method for sending data, the basic two being `send1d(data)` and `send2d(data)`.  The 1d functions are for things like points and curves.  The 2d functions are for surfaces and images.  This is explained in more detail in later sections.
 
 The most basic usage is to send the data through gnuplot's stdin, like so:
 	gp << "plot '-' with points\n";
@@ -92,12 +87,7 @@ You can data in binary format rather than text, and this is probably a bit more 
 
 There are several examples in the source:
 
-* `example-misc.cc` - Shows basic usage, temporary files, binary files, and various other
-  things.
-* `example-interactive.cc` - Demonstrates handling mouse click events.  Currently only works in
-  Linux.
-* `example-tuples.cc` - Demonstration of various ways data can be passed, for 1d data (curves).
-  This should plot a series of intertwined curves in the shape of a torus, with each curve
-  being passed using a different type of container.
-* `example-uv.cc` - Similar to the above but for 2d data.  Should plot a segmented torus, with
-  each segment corresponding to a different type of container.
+* `example-misc.cc` - Shows basic usage, temporary files, binary files, and various other things.
+* `example-interactive.cc` - Demonstrates handling mouse click events.  Currently only works in Linux.
+* `example-tuples.cc` - Demonstration of various ways data can be passed, for 1d data (curves).  This should plot a series of intertwined curves in the shape of a torus, with each curve being passed using a different type of container.
+* `example-uv.cc` - Similar to the above but for 2d data.  Should plot a segmented torus, with each segment corresponding to a different type of container.
