@@ -10,7 +10,7 @@ Table of contents:
 
 *  [Basic Usage](BasicUsage)
 *  [Datatypes](Datatypes)
-*  [Stdin vs. temporary files](StdinVsTemporary)
+*  [Stdin vs. temporary files](StdinVsFiles)
 *  [Binary data](BinaryData)
 *  [Legacy interface](LegacyInterface)
 *  [Capturing mouse events](Mouse)
