@@ -9,15 +9,9 @@ If you have any questions, bugs, or suggestions, email me at `dan@stahlke.org`.
 Table of contents:
 
 *  [Basic Usage](BasicUsage)
-
 *  [Datatypes](Datatypes)
-
 *  [Stdin vs. temporary files](StdinVsTemporary)
-
 *  [Legacy interface](LegacyInterface)
-
 *  [Capturing mouse events](Mouse)
-
 *  [Portability](Portability)
-
 *  [FAQ](FAQ)
