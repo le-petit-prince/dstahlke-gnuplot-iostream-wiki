@@ -53,7 +53,7 @@ You can send data in [binary format](BinaryData) rather than text, and this is p
 	#include "gnuplot-iostream.h"
 
 	int main() {
-		Gnuplot gp("gnuplot -persist");
+		Gnuplot gp;
 
 		// Gnuplot vectors (i.e. arrows) require four columns: (x,y,dx,dy)
 		std::vector<boost::tuple<double, double, double, double> > pts_A;
