@@ -2,12 +2,6 @@
 
 In order to support all kinds of container and tuple types, I make heavy use of template metaprogramming techniques.  This may break some compilers, although it works fine in modern versions of g++ and VC++.
 
-C++11 datatypes are not yet supported on VC++, even with the Nov 2012 CTP compiler (although I swear it was working at one point!)
-
-FIXME - make chart of compiler support
-
-NOTE: tell which ones support C++11.
-
 # Windows
 
 On Windows, you may need to be careful to properly quote the path:
