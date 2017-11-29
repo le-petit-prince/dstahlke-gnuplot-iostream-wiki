@@ -11,7 +11,7 @@ NOTE: tell which ones support C++11.
 # Windows
 
 On Windows, you may need to be careful to properly quote the path:
-	Gnuplot gp("\"C:\\my path\\gnuplot.exe\"");
+	Gnuplot gp("\\"C:\\\\my path\\\\gnuplot.exe\\"");
 
 On Linux, the "-persist" option can be passed to gnuplot in order to prevent the gnuplot window from closing when your program exits.  On Windows this sometimes doesn't work.  When the `Gnuplot` object goes out of scope, the pipe is closed and `gnuplot` exits.  This can be cured by instead using `pgnuplot`, but that is deprecated and seems to garble data.  Perhaps better is to prompt the user to press a key before exiting your program (and before letting the `Gnuplot` object go out of scope).
 
